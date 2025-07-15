@@ -7,12 +7,15 @@ import { FiX } from "react-icons/fi"
 
 const galleryItems = [
   { id: 1, title: "Shorshe Ilish", description: "Hilsa fish in mustard sauce" },
-  { id: 2, title: "Pasta ", description: "Home made pasta" },
-  { id: 3, title: "Kosha Mangsho", description: "Slow-cooked mutton curry" },
-  { id: 4, title: "Aloo Posto", description: "Potatoes in poppy seed paste" },
-  { id: 5, title: "Chinese Platter", description: "Fried rice , chicken, paneer" },
-  { id: 6, title: "Polau Kosha Mangsho", description: "With spicy chicken kosha " },
- 
+  { id: 2, title: "Chili Mushroom ", description: "Home made spicy chili mushroom " },
+  
+
+  { id: 3, title: "Shorshe Papda", description: "Papda Fish with Sorshe delight" },
+  { id: 4, title: "Hummus", description: "Served with Chips and Beverages " },
+  { id: 5, title: "Chinese Platter", description: "With Chicken and Paneer " },
+ { id: 6, title: "Polau Kosha Mangsho", description: "With spicy chicken kosha " },
+ { id: 7, title: "Fish Resala", description: "Authentic resala with vetki fish " },
+ { id: 8, title: "Tangra Fish ", description: "Tangra Fish jhaal " },
 ]
 
 export default function FoodGallery() {
