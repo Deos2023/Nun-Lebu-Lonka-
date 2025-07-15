@@ -107,7 +107,7 @@ export default function Home() {
               href="#menu" 
               className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md shadow"
             >
-              Today's Menu
+              Today&apos;s Menu
             </a>
             <a 
               href="tel:7602091586" 
@@ -242,112 +242,137 @@ export default function Home() {
   />
 </div>
       {/* Menu Section */}
-      <section id="menu" className="py-16 px-6 bg-white">
-  <div className="max-w-7xl mx-auto">
-    <div className="text-center mb-12">
-      <h2 className="text-3xl font-bold text-gray-800 mb-2">Special Menus</h2>
-      <div className="w-20 h-1 bg-orange-500 mx-auto"></div>
-      <p className="text-gray-600 mt-4">Celebrate with our exclusive seasonal offerings</p>
-    </div>
+        <section id="menu" className="py-16 px-6 bg-white">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-gray-800 mb-2">Special Menus</h2>
+          <div className="w-20 h-1 bg-orange-500 mx-auto"></div>
+          <p className="text-gray-600 mt-4">Celebrate with our exclusive seasonal offerings</p>
+        </div>
 
-    {/* Zigzag Grid Layout with Landscape Images */}
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {specialMenus.map((menu, index) => (
-        <motion.div
-          key={index}
-          initial={{ y: index % 2 === 0 ? 60 : -60, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: index * 0.1 }}
-          viewport={{ once: true, margin: "-50px" }}
-          className={`relative group ${index % 3 === 0 ? 'md:-mt-10' : index % 2 === 0 ? 'md:mt-10' : ''}`}
-        >
-          <button 
-            onClick={() => openModal(menu)} 
-            className="w-full text-left focus:outline-none"
-          >
-            <div className="relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 h-full">
-              {/* Landscape image container with aspect ratio */}
-              <div className="aspect-w-16 aspect-h-9 w-full">
-                <img 
-                  src={menu.image} 
-                  alt={menu.title} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-5">
-                <div>
-                  <h3 className="text-white text-xl font-bold mb-1">{menu.title}</h3>
-                  <p className="text-orange-200 text-sm">{menu.description}</p>
-                  <div className="mt-2 flex items-center text-orange-100 text-sm">
-                    <span>Click to view</span>
-                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </button>
-        </motion.div>
-      ))}
-    </div>
-
-    <div className="mt-12 text-center">
-      <a 
-        href="#contact" 
-        className="inline-block bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-md shadow-lg font-medium transition-colors"
-      >
-        Book Your Special Occasion
-      </a>
-    </div>
-  </div>
-
-  {/* Enhanced Image Modal */}
-  {selectedMenu && (
-    <motion.div 
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/95"
-      onClick={() => setSelectedMenu(null)}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+  {specialMenus.map((menu, index) => (
+    <motion.div
+      key={index}
+      initial={{ y: index % 2 === 0 ? 60 : -60, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      viewport={{ once: true, margin: "-50px" }}
+      className="group"
     >
-      <button 
-        className="absolute top-6 right-6 text-white text-4xl z-10 hover:text-orange-300 transition-colors"
-        onClick={() => setSelectedMenu(null)}
-        aria-label="Close modal"
+      <button
+        onClick={() => openModal(menu)}
+        className="block w-full text-left focus:outline-none"
       >
-        &times;
-      </button>
-      <div className="relative w-full max-w-6xl" onClick={e => e.stopPropagation()}>
-        <div className="flex flex-col md:flex-row gap-6">
-          <div className="md:w-2/3">
-            <img 
-              src={selectedMenu.image} 
-              alt={selectedMenu.title} 
-              className="w-full h-auto max-h-[80vh] object-contain rounded-lg shadow-2xl"
-            />
-          </div>
-          <div className="md:w-1/3 text-white">
-            <h3 className="text-3xl font-bold mb-3">{selectedMenu.title}</h3>
-            <p className="text-orange-300 mb-4">{selectedMenu.description}</p>
-            <div className="space-y-4">
-              {selectedMenu.items && selectedMenu.items.map((item, i) => (
-                <div key={i} className="border-l-2 border-orange-500 pl-3">
-                  <h4 className="font-medium">{item.category}</h4>
-                  <p className="text-sm text-gray-300">{item.dishes.join(', ')}</p>
-                </div>
-              ))}
+        <div className="relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 h-72 md:h-[100vh]">
+          <Image
+            src={menu.image}
+            alt={menu.title}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-5">
+            <div>
+              <h3 className="text-white text-lg md:text-xl font-bold mb-1">
+                {menu.title}
+              </h3>
+              <p className="text-orange-200 text-sm">{menu.description}</p>
+              <div className="mt-2 flex items-center text-orange-100 text-sm">
+                <span>Click to view</span>
+                <svg
+                  className="w-4 h-4 ml-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                  />
+                </svg>
+              </div>
             </div>
-            <button className="mt-6 bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-md transition-colors">
-              Inquire About This Menu
-            </button>
           </div>
         </div>
-      </div>
+      </button>
     </motion.div>
-  )}
-</section>
+  ))}
+</div>
+
+
+        <div className="mt-12 text-center">
+          <a
+            href="#contact"
+            className="inline-block bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-md shadow-lg font-medium transition-colors"
+          >
+            Book Your Special Occasion
+          </a>
+        </div>
+      </div>
+
+      {/* Modal */}
+      {selectedMenu && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/95"
+          onClick={() => setSelectedMenu(null)}
+        >
+          <button
+            className="absolute top-6 right-6 text-white text-4xl z-10 hover:text-orange-300 transition-colors"
+            onClick={() => setSelectedMenu(null)}
+            aria-label="Close modal"
+          >
+            &times;
+          </button>
+          <div
+            className="relative w-full max-w-6xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex flex-col md:flex-row gap-6">
+              <div className="md:w-2/3 relative h-[90vh]">
+                <Image
+                  src={selectedMenu.image}
+                  alt={selectedMenu.title}
+                  fill
+                  className="object-contain rounded-lg shadow-2xl"
+                />
+              </div>
+              <div className="md:w-1/3 text-white overflow-y-auto max-h-[80vh]">
+                <h3 className="text-3xl font-bold mb-3">{selectedMenu.title}</h3>
+                <p className="text-orange-300 mb-4">{selectedMenu.description}</p>
+                <div className="space-y-4">
+                  {selectedMenu.items?.map((item, i) => (
+                    <div
+                      key={i}
+                      className="border-l-2 border-orange-500 pl-3"
+                    >
+                      <h4 className="font-medium">{item.category}</h4>
+                      <p className="text-sm text-gray-300">
+                        {item.dishes.join(", ")}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+                <button className="mt-6 bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-md transition-colors">
+                  Inquire About This Menu
+                </button>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      )}
+    </section>
 
 
 
@@ -439,7 +464,7 @@ export default function Home() {
                     </span>
                   ))}
                 </div>
-                <p className="text-gray-700 italic mb-4">"{testimonial.comment}"</p>
+                <p className="text-gray-700 italic mb-4">&apos;{testimonial.comment}&apos;</p>
                 <p className="font-bold text-gray-800">— {testimonial.name}</p>
               </motion.div>
             ))}
