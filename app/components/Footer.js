@@ -124,7 +124,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="border-t border-gray-800 pt-6 text-center text-gray-400 text-sm">
-          <p>&copy; {new Date().getFullYear()} Nun Lebu. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Nun Lebu. All Rights Reserved. Website Develope and Maintained By Digital Exposure Online Services</p>
           <div className="flex justify-center space-x-4 mt-2">
             <a href="#" className="hover:text-orange-500 transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-orange-500 transition-colors">Terms of Service</a>
