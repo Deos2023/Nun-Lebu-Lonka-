@@ -33,8 +33,8 @@ export default function BestDeliveredCategories() {
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-16">
-          <h2 className="text-5xl font-bold text-center md:text-left max-w-xl">
-            Our <span className="text-orange-500">Best  Delivered</span> Categories
+          <h2 className="text-5xl font-bold text-center md:text-left max-w-xl text-green-800">
+            Our <span className="text-red-600">Best  Delivered</span> Categories
           </h2>
           <p className="text-gray-600 text-center md:text-right max-w-xl text-xl">
             Experience the rich flavors of Bengal with our carefully curated food categories.

@@ -96,7 +96,7 @@ export default function Home() {
       <section id="#" className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-3 gap-12 items-center bg-gradient-to-b from-orange-50 to-white">
         {/* Left Section */}
         <div>
-          <h1 className="text-4xl font-bold leading-tight mb-4 text-gray-800">
+          <h1 className="text-4xl font-bold leading-tight mb-4 text-green-800">
             <span className="text-red-600">Nun Lebu Lonka</span> - Authentic Bengali Home Delights
           </h1>
           <p className="text-gray-600 mb-4 font-light">
@@ -245,7 +245,7 @@ export default function Home() {
         <section id="menu" className="py-16 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-2">Special Menus</h2>
+          <h2 className="text-3xl font-bold text-green-800 mb-2">Special Menus</h2>
           <div className="w-20 h-1 bg-orange-500 mx-auto"></div>
           <p className="text-gray-600 mt-4">Celebrate with our exclusive seasonal offerings</p>
         </div>
@@ -399,7 +399,7 @@ export default function Home() {
 
     {/* Right - Text Content */}
     <div className="text-center md:text-left">
-      <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Story</h2>
+      <h2 className="text-3xl font-bold text-green-800 mb-4">Our Story</h2>
       <div className="w-20 h-1 bg-orange-500 mb-6 mx-auto md:mx-0"></div>
       <p className="text-gray-600 mb-4">
         At Nun Lebu Lonka, we bring authentic Bengali flavors to your home...
@@ -441,7 +441,7 @@ export default function Home() {
       <section className="py-16 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">What Our Customers Say</h2>
+            <h2 className="text-3xl font-bold text-green-800 mb-2">What Our Customers Say</h2>
             <div className="w-20 h-1 bg-orange-500 mx-auto"></div>
           </div>
 
@@ -476,7 +476,7 @@ export default function Home() {
       <section id="contact" className="py-16 px-6 bg-gradient-to-r from-orange-50 to-red-50">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Get In Touch</h2>
+            <h2 className="text-3xl font-bold text-green-800 mb-4">Get In Touch</h2>
             <div className="w-20 h-1 bg-orange-500 mb-6"></div>
             
             <div className="space-y-6">

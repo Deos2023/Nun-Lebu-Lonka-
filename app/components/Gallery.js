@@ -22,7 +22,7 @@ export default function FoodGallery() {
     <section id="gallery" className="py-16 px-4 sm:px-6 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Our Food Gallery</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-2">Our Food Gallery</h2>
           <div className="w-20 h-1 bg-orange-500 mx-auto mb-4"></div>
           <p className="text-gray-600 text-lg">A visual feast of traditional Bengali cuisine</p>
         </div>
