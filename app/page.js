@@ -29,24 +29,24 @@ export default function Home() {
   };
 
   const specialMenus = [
+  // {
+  //   title: " Puja Special",
+  //   description: "Traditional Bhog & Festive Delicacies",
+  //   image: "/menu1.png"
+  // },
+  // {
+  //   title: "Wedding Feast",
+  //   description: "Grand Bengali Wedding Spread",
+  //   image: "/menu2.png"
+  // },
   {
-    title: " Puja Special",
-    description: "Traditional Bhog & Festive Delicacies",
-    image: "/menu1.png"
-  },
-  {
-    title: "Wedding Feast",
-    description: "Grand Bengali Wedding Spread",
-    image: "/menu2.png"
-  },
-  {
-    title: "Poila Boishakh",
+    title: "Thalir Bahare Ahare Ahare ",
     description: "New Year Celebration Platter",
     image: "/menu3.png"
   },
   {
-    title: "Winter Festival",
-    description: "Seasonal Winter Specialties",
+    title: "Weeks Menu's",
+    description: "Weeks Specials",
     image: "/menu1.png"
   }
 ];
